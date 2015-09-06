@@ -1,0 +1,1087 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 AndaleMono;\f4\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;\red16\green60\blue192;
+\red159\green160\blue28;\red200\green20\blue201;\red111\green111\blue111;\red47\green255\blue18;\red0\green0\blue0;
+\red178\green178\blue178;\red135\green138\blue4;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Node Js: 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1\
+-Nodejs uses a concept of event loop where event loop uses the time for other tasks and keeping it server non blocked to process the data as desired.\
+-perfect for apps that require heavy i/o\
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Installing on Windows: {\field{\*\fldinst{HYPERLINK "http://nodejs.org/"}}{\fldrslt 
+\b0 \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 nodejs.org}}
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  -> install -> Run the Executable. -> verify installation on cmd\'a0 -> node -v -> returns the version\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Installing on MAC:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  {\field{\*\fldinst{HYPERLINK "http://nodejs.org/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 nodejs.org}} -> Install -> Run the .pkg -> verify installation on terminal -> node -v -> returns the version if installed successfully.\
+\pard\pardeftab720
+
+\f1\b\fs22 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0\b\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Chapter3:\'a0
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 							REPL and hello Node
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. Read-Evaluate-print -line
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 : node js gives an interactive code execution environment called REPL. onnodejs REPL allows to type code directly into environment that executes immediately.\
+- Chrome developer tool also has REPL named as \'93console\'94 similar to node js repl with some differences.\
+Goto Terminal -> type Node, and enter anything like 25*80 - this is executed immediately coz of REPL.\
+Example:\
+\pard\pardeftab720
+
+\f2\fs22 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Silverbacks-iMac:~ silverback$ node\
+> 20 * 10\
+\pard\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 200\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > new Date()\
+\pard\pardeftab720
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 Tue Jul 21 2015 16:41:07 GMT+1000 (AEST)\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > parseInt(Math.random() *1000) // produces a random number everytime it runs\
+\pard\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 488\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > parseInt(Math.random() * 1000)\
+\pard\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 302\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 >\'a0\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Can also put the above in a function:\
+> function randomNumber()\{\
+...\'a0\
+...\'a0\
+... console.log(parseInt(Math.random() * 1000));\
+... \}\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 undefined\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > randomNumber()\
+789\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 undefined\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > randomNumber()\
+285\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 undefined\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > .save myREPLYsession1.js\
+Session saved to:myREPLYsession1.js\
+.exit\
+clear to clear the screen on Mac\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. NodeJS Function that Reads a text file
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 :\'a0\
+Name of the text file, de-coding, a function with 2 args (error, content)\'a0\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 > fs.readFile("test.txt", "utf8", function(error, content)\{\
+... console.log(content);\
+... \});\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The above returns the content\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3. Load JS files:
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+.load filename.js\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 > .load time.js\
+> function hello(fullname)\{\
+... console.log("Hi " + fullname + " The Time is :" + new Date().getHours() + "Hours" + new Date().getMinutes() + "Minutes!");\
+... \}\
+\pard\pardeftab720
+\cf7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 undefined\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 > hello("priya")\
+Hi priya The Time is :10Hours31Minutes!\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0\b\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 						\'94Writing\'a0 a hello World server
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b\fs22 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. Writing a hello World Server!
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Begin by building a new server
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Server: A server in nodejs is a software that serves files and Data and runs 
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 various executables..\'a0\
+- NodeJS doesn\'92t require an existing server.\
+- We build server from scratch.\
+- Firstly we create few variables, the first one is called the http\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 var http = require('http'), \'a0 
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 //imports http module\'a0\
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0 \'a0 host = '127.0.0.1',\'a0
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0 \'a0 port = '9000' ;\'a0
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 var server = http.createServer(function(req, res)\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	res.writeHead(200, \{'Content-Type' : 'text/html'\});
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	res.end('<h1>Hello World ! </h1>\'92);
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \}).listen(port, host, function()\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	console.log('Server running on {\field{\*\fldinst{HYPERLINK "http://%27/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 http://'}} + host + ':' + port);
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \})
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 //http module contains all the necessary methods that will allow us to build a server,\'a0\
+// host defines the host\'92s ip address on which you will be able to access the Node\'92s server and port t bind.\
+//create server method lets us instantiate a server within node js,\'a0\
+//when you request a url from a server, the request object is made available via the req argument and the response via res for the server to respond back,\'a0\
+//WriteHEad method sets the header of the content that we are about to serve. First serve https status of 200 means OK. and we define a content type so the browser knows what type of content is coming its way\
+//res.end - we end the response by providing the content we wish to serve in the paranthesis\
+//Now that server is defined, we need to make the server listen to the requests that users type in a listen method (port, host, funciton)\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save the above file and run it as node filename.js\
+open a browser, type the {\field{\*\fldinst{HYPERLINK "http://127.0.0.1:9000/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 127.0.0.1:9000}} , it must display a hello world\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 3. Writing a Basic Server using node.js | Using Modules
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+The hello world server we build above demonstrated a working server, however it doesn\'92t server any files and hence useless. Hence in the following, we turn our Hello world server into a more useful server that serves a website.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Save the above helloworld.js file in the root folder where some sample basichtmlwebsite folder is.\'a0\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 var http = require('http'),\
+	fs = require('fs'),\'a0 //fs or file system module allows us to read/write/play with files on disk from within a node app\
+\'a0 \'a0 path = require('path') // path module to constuct a valid path to the files we will server\
+\'a0 \'a0 host = '127.0.0.1',\'a0\
+\'a0 \'a0 port = '9000' ;\'a0\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 var mimes = \{ // an object that contains file extensions and thier mime types as keyvalue pairs\
+	".htm" : "text/html",\
+	".css" : "text/css",\
+	".js" : "text/javascript",\
+	".gif" : "image/gif",\
+	".jpg" : "image/jpeg",\
+	".png" : "image/png"\
+\}\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 var server = http.createServer(function(req, res)\{\
+// First Extract the file name that the user has requested from req\
+var filepath = (req.url === '/')? ('.index.htm') : ('.' + req.url);\'a0 \'a0 \'a0 \'a0 //if req.url equal to a '/' which is the root of the website being served, the file name we would serve would be ./index.htm else it should be the specific name of the file being requested, req.url contains the refernece to the requested file.\
+//Extract the file extension of the request type from the response object and get a matching type from mime object\
+var contentType = mimes[path.extname(filepath)];\'a0 //path.extname method extratcs the the extension\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 // Check to see if the file exists or not\'a0\
+	fs.exists(filepath, function (file_exists) \{\
+		if(file_exisys)\{\
+			//read the file and serve\
+			fs.readFile(filepath, function(error, content) \{ \'a0 \'a0 //If file exists, we will use fs.readfile which reads the file asyncronously and fires a callback function in which we will put the first argument as error and the second as content\
+				if(error)\{\
+					res.writeHead(500);\
+					res.end();\
+				\} else \{\
+					res.writeHead(200, \{'Content-Type' : \})\'a0 \'a0 //if success, and the file isread it responds with the write head method with 200 OK status followed by content-type. since Different file types will have different Content types, lets build an object that contains file extensions and thier mime types as keyvalue pairs\
+					res.end(content, 'utf-8');\
+				\}\
+			\})\
+		\} else \{\
+			res.writeHead(404);\
+			res.end("The file requested is not found");\
+		\}\
+	\})\
+	\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \uc0\u8232 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\}).listen(port, host, function()\{\
+	console.log('Server running on {\field{\*\fldinst{HYPERLINK "http://%27/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 http://'}} + host + ':' + port);\
+\})\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Code:\
+\pard\pardeftab720
+
+\f1\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 var http = require('http'),
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	fs = require('fs'),
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	path = require('path'),
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	host = '127.0.0.1',
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	port = '9000';
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	var mimes = \{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		".htm" : "text/html",
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		".css" : "text/css",
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		".js" : "text/javascript",
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		".gif" : "/image/gif",
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		".jpg"\'a0 : "image/jpeg",
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		".png" : "image/png"
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	\}
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	var server = http.createServer(function (req, res)\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	 	var filepath = (req.url === '/') ? ('./index.htm') : ('.' + req.url);
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	 	var contentType = mimes[path.extname(filepath)];
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	 	//check if file exists
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	 	fs.exists(filepath, function(file_exists)\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0			if(file_exists)\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0				//read and serve
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0				fs.readFile(filepath, function (error, content)\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0					if (error) \{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0						res.writeHead(500);
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0						res.end();
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0					\} else \{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0					res.writeHead(200, \{'Content-Type' : contentType \});
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0					res.end(content, 'utf-8' );
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0				\}
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0			\})
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0			\} else \{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0				res.writeHead(404);
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0				res.end("The file requested is not found");
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0			\}
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	 	\})
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	\}).listen( port, host, function ()\{
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 		console.log('The server is runnin on {\field{\*\fldinst{HYPERLINK "http://%27/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 http://'}} + host + ':' + port);
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\f1\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	\})
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b\fs22 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 4. Writing an Efficient Server || Using Streams
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+var http = require('http'),\
+	fs = require('fs'),\
+	path = require('path'),\
+	host = '127.0.0.1',\
+	port = '9000';\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	var mimes = \{\
+		".htm" : "text/html",\
+		".css" : "text/css",\
+		".js" : "text/javascript",\
+		".gif" : "/image/gif",\
+		".jpg"\'a0 : "image/jpeg",\
+		".png" : "image/png"\
+	\}\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	var server = http.createServer(function (req, res)\{\
+	 	var filepath = (req.url === '/') ? ('./index.htm') : ('.' + req.url);\
+	 	var contentType = mimes[path.extname(filepath)];\
+	 	//check if file exists\
+	 	fs.exists(filepath, function(file_exists)\{\
+\'a0			if(file_exists)\{\
+\'a0				//read and serve\
+\'a0			// 	fs.readFile(filepath, function (error, content)\{\
+\'a0			// 		if (error) \{\
+\'a0			// 			res.writeHead(500);\
+\'a0			// 			res.end();\
+\'a0			// 		\} else \{\
+\'a0			// 		res.writeHead(200, \{'Content-Type' : contentType \});\
+\'a0			// 		res.end(content, 'utf-8' );\
+\'a0			// 	\}\
+\'a0			// \})\
+	 		res.writeHead(200, \{'Content-Type' : contentType\});\
+	 		var streamFile = fs.createReadStream(filepath).pipe(res); //reading file in streaming mode and piping pack to the response\
+	 		streamFile.on('error', function()\{\
+	 			res.writeHead(500);\
+	 			res.end();\
+	 		\})\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0			\} else \{\
+\'a0				res.writeHead(404);\
+\'a0				res.end("The file requested is not found");\
+\'a0			\}\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	 	\})\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 	\}).listen( port, host, function ()\{\
+		console.log('The server is runnin on {\field{\*\fldinst{HYPERLINK "http://%27/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 http://'}} + host + ':' + port);\
+	\})\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f1\b\fs22 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 5. Understanding the Node Package manager (NPM) & Package.json:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 - 
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Most languages such as Java provide a mechanism for importing ready to use libraries and functions.\
+- though natively current edition of JS doesn\'92t allow this mechanism, the common js project provides a way of enabling Javascript app to go modular.\
+- Node js implements this common JS interface and instantly get access to packages and functions etc.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Writing your own Modules:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+module.exports\{\
+addFn : function(a+b)\{\
+return a+b ;\
+\},\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 SubFn : function(a-b)\{\
+return a-b;\
+\}\
+\}\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Using Modules:
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+Import the module into your app using require method:\
+var mathModule = require(\'91./MathModule.js\'92);\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Var addNumbers = MathModule.addFn(15, 35);\
+console.log(\'91Adding two numbers:\'92 + \'91addNumbers);\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 - Node Js comes with built in modules.\
+- This is where the NPM (node package manager comes in) This installs along with the node js as a command line tool.\
+- npm init - syntax to initialise npm which creates a package.json\
+- when you upload the app to the server, you simply upload the package.json file\'a0 which will have the modules as a dependency when the apps is created, rather than importing the modules again on the server.\
+- 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 create a sample\'a0 node js app
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+1. download the module first from the folder where the app need to be created :\
+	npm init\'a0 press enter\
+\pard\pardeftab720
+
+\f3 \cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 This utility will walk you through creating a package.json file.\
+It only covers the most common items, and tries to guess sensible defaults.\
+\pard\pardeftab720
+\cf8 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 See `npm help json` for definitive documentation on these fields\
+and exactly what they do.\
+\pard\pardeftab720
+\cf8 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Use `npm install <pkg> --save` afterwards to install a package and\
+save it as a dependency in the package.json file.\
+\pard\pardeftab720
+\cf8 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Press ^C at any time to quit.\
+name: (QRcode)\
+name: (QRcode) qrapp\
+version: (1.0.0) 1.0.0\
+description: This is the first sample app\
+entry point: (index.js) app.js\
+test command:\'a0\
+git repository:\'a0\
+keywords:\'a0\
+author: Priya\
+license: (ISC)\'a0\
+About to write to /Users/silverback/Desktop/tests/QRcode/package.json:\
+\pard\pardeftab720
+\cf8 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \{\
+\'a0 "name": "qrapp",\
+\'a0 "version": "1.0.0",\
+\'a0 "description": "This is the first sample app",\
+\'a0 "main": "app.js",\
+\'a0 "scripts": \{\
+\'a0 \'a0 "test": "echo \\"Error: no test specified\\" && exit 1"\
+\'a0 \},\
+\'a0 "author": "Priya",\
+\'a0 "license": "ISC"\
+\}\
+\pard\pardeftab720
+\cf8 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Is this ok? (yes)\'a0\
+\pard\pardeftab720
+
+\f0 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 2. This will ask some basic questions. Once done, this will create a package.json file in the folder.\
+3. download the QR-image module\
+	npm install qr-image - - save , npm downloads the qr image into a folder called \'93Node_modules\'94\
+and you don\'92t have upload this folder on the server as the package.json will automatically directly on the server. as the package.json will have the QR\'a0\
+\pard\pardeftab720
+
+\f3 \cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Is this ok? (yes) yes\
+Silverbacks-iMac-2:QRcode silverback$ npm install qr-image --save\
+\pard\pardeftab720
+\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 npm\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \cb11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 WARN\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 package.json\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  qrapp@1.0.0 No repository field.\
+\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 npm\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf9 \cb11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 WARN\cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 package.json\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8  qrapp@1.0.0 No README data\
+qr-image@3.1.0 node_modules/qr-image\
+\uc0\u9492 \u9472 \u9472  pako@0.2.7\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 4. create an app.js file in the same QRcode folder.\
+We want to generate a QR code image that sends the users to the nodejs website.\
+var qrImage = require('qr-image');\
+var fs = require('fs');\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 qrImage\'a0\
+	.image("{\field{\*\fldinst{HYPERLINK "http://www.nodejs.org/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 http://www.nodejs.org}}", \{type:'png', size:20\})\'a0 \'a0 //importing the .image file from node\
+	.pipe(fs.createWriteStream("MyQRcode.png"));\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f4 \cf9 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 go to terminal from the QRcode folder and 
+\f3 \cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Silverbacks-iMac-2:QRcode silverback$ node app.js\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 This will create the qrimage.png file in the folder.\
+This is how simple it is where we use npm to initialise a package.json file and use it on server with the dependencies on the package.json file.\
+\pard\pardeftab720
+
+\f1\b\fs22 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Chapter4: MongoDB
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 			Intro to MongoDB
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Table= collection\
+row = document\
+column = field\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 MongoDB stores data using key value pairs\
+MongoDb stores data as BSON.\
+Every record in Mongo has a unique identifier.\
+stores in a BSON document similar to Json with a flexible schema\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 difference between SQL and mongo\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 sql:\
+Select * from addressBook where email = \'91{\field{\*\fldinst{HYPERLINK "mailto:john@johndoe.com"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 john@johndoe.com}}\'92\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 mongo:\
+db.addressBook.find (\{\'93email\'94 : {\field{\*\fldinst{HYPERLINK "mailto:john@johndoe.com"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 john@johndoe.com}}\})\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 - can install mongoDB on your own server (OR)\'a0\
+- on cloud infrastructure in which case you re the admin responsible for deploy, maintain and scale.\
+- Database-As-A-Service allows mongo at ease(mongolab)\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 - to connect between mongoDB and node js app, we need a mongoDB driver.\
+- Mongo provides an interactive mongo shell.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Installing MongoDB and the mongo db shell:\
+-{\field{\*\fldinst{HYPERLINK "http://mongodb.org/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 mongodb.org}}\
+-download the latest mongodb\
+-Run the installer. - This installs Mongo with executables.\
+\'a0-create a folder structure somewhere called mongo- data - db\
+- Run mongo as a windows service so it runs by default when the windows start. For this create a config file.\
+- Go to where the Mongo2.6 standard is installed and create a config file\
+copy con mongod.cfg\
+logpath = c:\\mongo\\log\
+dbpath=c:\\mongo\\data\\db\
+f6 followed by enter to write the file.\
+mongo.cfg file has been created.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 go to bin which contains the mongo executable files.\'a0\
+to install mongodb as a service, type mongod.exe\'a0 - -config\'a0 \'93path to the config file that was created\'94 - - install.\
+this creates a mongoldb service\
+from the same bin, type net start MongoDB\
+mongo press enter this will start the shell and waits for test\
+show dbs // list of DB\'92s - shows admin and local\
+use newDB //creates new db and switches to\
+//create a collection\
+db.users.insert(\{\'93name\'94 : \'93test\'94,\'a0 \'93email\'94 : \'93{\field{\*\fldinst{HYPERLINK "mailto:test@test.com"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 test@test.com}}\'94\}) / this creates users collection\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 db.users.insert(\{ \'93name\'94 : \'93test2\'94, \'93email\'94 : \'93{\field{\*\fldinst{HYPERLINK "mailto:test2@test.com"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 test2@test.com}}\'94\})\
+// view content\
+db.users.find() // this inserts the id identifier.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 db.users.find().pretty() \'a0 // gives a readable\'a0\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f1\b\fs22 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Chapter5: ChatCat - create a multiroom chat app/ learning Objectives
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 1. 
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The login page: user can click on login with Facebook.\
+2. enter a topic and create room button\
+3. enter the selected chat\
+4. Enter text\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 We will use the following:\
+- ExpressJs Framework:\
+- Modularity : To divide functionality of app into individual modules . These modules reside as separate modules\
+- Setting up dev/Prod environment\'a0\
+- Using Sessions (for data to persist across routes and pages)\
+- {\field{\*\fldinst{HYPERLINK "http://socket.io/"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 \outl0\strokewidth0 \strokec4 socket.io}} node js module. (web sockets for REAL time network apps)\
+- Heroku - a platform as a service provider.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Examining the UI of the app and begin
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Create an Express4 App:
+\f2\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+1. Create a package.json file npm init from the app folder.\
+2. Install Express framework: npm install express - - save // \'97 - save will create dependency in the package.json\
+3. create a app.js file.\
+\pard\pardeftab720
+\cf2 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\
+}

@@ -1,0 +1,192 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red159\green160\blue28;\red200\green20\blue201;\red111\green111\blue111;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs24 \cf0 Node Js: 
+\b0 1\
+
+\b Installing on Windows: 
+\b0 nodejs.org -> install -> Run the Executable. -> verify installation on cmd  -> node -v -> returns the version\
+\
+
+\b Installing on MAC:
+\b0  nodejs.org -> Install -> Run the .pkg -> verify installation on terminal -> node -v -> returns the version if installed successfully.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\b\fs22 \cf0 \CocoaLigature0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f0\b0\fs24 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b \cf0 Chapter3:
+\b0 \
+
+\b 1. Read-Evaluate-print -line
+\b0 : nodejs REPL allows to type code directly into environment that executes immediately.\
+Goto Terminal -> type Node, and enter anything like 25*80 - this is executed immediately coz of REPL.\
+Example:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f2\fs22 \cf0 \CocoaLigature0 Silverbacks-iMac:~ silverback$ node\
+> 20 * 10\
+\cf2 200\cf0 \
+> new Date()\
+\cf3 Tue Jul 21 2015 16:41:07 GMT+1000 (AEST)\cf0 \
+> parseInt(Math.random() *1000) // produces a random number everytime it runs\
+\cf2 488\cf0 \
+> parseInt(Math.random() * 1000)\
+\cf2 302\cf0 \
+> \
+\
+Can also put the above in a function:\
+> function randomNumber()\{\
+... \
+... \
+... console.log(parseInt(Math.random() * 1000));\
+... \}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf4 undefined\cf0 \
+> randomNumber()\
+789\
+\cf4 undefined\cf0 \
+> randomNumber()\
+285\
+\cf4 undefined\cf0 \
+> .save myREPLYsession1.js\
+Session saved to:myREPLYsession1.js\
+.exit\
+clear to clear the screen on Mac\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\b \cf0 2. NodeJS Function that Reads a text file
+\f2\b0 : \
+Name of the text file, outfit encoding, a function with 2 args (error, content) \
+\
+> fs.readFile("test.txt", "utf8", function(error, content)\{\
+... console.log(content);\
+... \});\
+\
+The above returns the content\
+\
+
+\f1\b 3. Load JS files:
+\f2\b0 \
+.load filename.js\
+\
+> .load time.js\
+> function hello(fullname)\{\
+... console.log("Hi " + fullname + " The Time is :" + new Date().getHours() + "Hours" + new Date().getMinutes() + "Minutes!");\
+... \}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf4 undefined\cf0 \
+> hello("priya")\
+Hi priya The Time is :10Hours31Minutes!\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\b \cf0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\f2\b0 \
+\
+
+\f1\b 2. Writing a hello World Server!\
+Server: A server in nodejs is a software that serves files and Data and runs 
+\f2\b0 various executables.. \
+NodeJS doesn\'92t require an existing server.\
+We build server from scratch.\
+http module contains all the necessary methods that will allow us to build a server, 
+\f1\b \
+\
+var http = require('http'),   
+\f2\b0 //imports http module
+\f1\b \
+    host = '127.0.0.1', \
+    port = '9000' ; \
+\
+var server = http.createServer(function(req, res)\{\
+	res.writeHead(200, \{'Content-Type' : 'text/html'\});\
+	res.end('<h1>Hello World ! </h1>')\
+\}).listen(port, host, function()\{\
+	console.log('Server running on http://' + host + ':' + port);\
+\})\
+\
+
+\f2\b0 \
+\
+//create server method lets us instantiate a server within node js, \
+//when you request a url from a server, the request object is made available via the req argument and the response via res, \
+//WriteHEad method sets the header of the content that we are about to serve. First serve https status of 200 means OK. and we define a content type so the browser knows what type of content is coming its way\
+//res.end - we end the response by providing the content we wish to serve in the paranthesis\
+//Now that server is defined, we need to make the server listen to the requests that users type in a listen method (port, host, funciton)
+\f1\b \
+
+\f2\b0 \
+Save the above file and run it as node filename.js\
+open a browser, type the 127.0.0.1:9000 , it must display a hello world\
+\
+\
+
+\f1\b ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
+3. Writing a Basic Server using node.js | Using Modules\
+
+\f2\b0 The hello world server we build above demonstrated a working server, however it doesn\'92t server any files and hence useless. Hence in the following, we turn our Hello world server into a more useful server that serves a website.\
+\
+Save the above helloworld.js file in the root folder where some sample basichtmlwebsite folder is. \
+\
+\
+var http = require('http'),\
+	fs = require('fs'),  //fs or file system module allows us to read/write/play with files on disk from within a node app\
+    path = require('path') // path module to constuct a valid path to the files we will server\
+    host = '127.0.0.1', \
+    port = '9000' ; \
+\
+var mimes = \{ // an object that contains file extensions and thier mime types as keyvalue pairs\
+	".htm" : "text/html",\
+	".css" : "text/css",\
+	".js" : "text/javascript",\
+	".gif" : "image/gif",\
+	".jpg" : "image/jpeg",\
+	".png" : "image/png"\
+\}\
+\
+\
+var server = http.createServer(function(req, res)\{\
+// First Extract the file name that the user has requested from req\
+var filepath = (req.url === '/')? ('.index.htm') : ('.' + req.url);        //if req.url equal to a '/' which is the root of the website being served, the file name we would serve would be ./index.htm else it should be the specific name of the file being requested, req.url contains the refernece to the requested file.\
+//Extract the file extension of the request type from the response object and get a matching type from mime object\
+var contentType = mimes[path.extname(filepath)];  //path.extname method extratcs the the extension\
+\
+// Check to see if the file exists or not \
+	fs.exists(filepath, function (file_exists) \{\
+		if(file_exisys)\{\
+			//read the file and serve\
+			fs.readFile(filepath, function(error, content) \{     //If file exists, we will use fs.readfile which reads the file asyncronously and fires a callback function in which we will put the first argument as error and the second as content\
+				if(error)\{\
+					res.writeHead(500);\
+					res.end();\
+				\} else \{\
+					res.writeHead(200, \{'Content-Type' : \})    //if success, and the file isread it responds with the write head method with 200 OK status followed by content-type. since Different file types will have different Content types, lets build an object that contains file extensions and thier mime types as keyvalue pairs\
+					res.end(content, 'utf-8');\
+				\}\
+			\})\
+		\} else \{\
+			res.writeHead(404);\
+			res.end("The file requested is not found");\
+		\}\
+	\})\
+	\
+\}).listen(port, host, function()\{\
+	console.log('Server running on http://' + host + ':' + port);\
+\})\
+\
+\
+
+\f0\fs24 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+\
+}
